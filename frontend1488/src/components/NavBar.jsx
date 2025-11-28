@@ -25,10 +25,10 @@ const NavBar = () => {
                                 ) : (
                                 <>
                                     <li>
-                                        <Link to={"/my-bids"}>Мои ставки</Link>
+                                        <Link to={"/mybids"}>Мои ставки</Link>
                                     </li>
                                     <li>
-                                        <Link to={"/create-item"}>+ Создать товар</Link>
+                                        <Link to={"/createitem"}>+ Создать товар</Link>
                                     </li>
                                     <li>
                                         <Link to={"/logout"}>Выйти</Link>

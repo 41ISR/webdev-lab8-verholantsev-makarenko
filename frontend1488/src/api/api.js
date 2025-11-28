@@ -2,7 +2,8 @@ import axios from "axios"
 import { useUserStore } from "../store/useUserStore"
 
 const apiInstance = axios.create({
-    baseURL:"https://kitek.ktkv.dev/feedback/api/",
+    //baseURL:"https://kitek.ktkv.dev/feedback/api/",
+    baseURL:"https://solid-dollop-pjpvw4jgvxv93r4x6-3001.app.github.dev/api/",
     headers:{
         "content-Type": "application/json"
     }
@@ -17,13 +18,13 @@ apiInstance.interceptors.request.use((config) => {
 
 })
 
-const getMessages = async () => {
-    const data = await apiInstance.get("/messages")
+const getItem = async () => {
+    const data = await apiInstance.get("/items")
     return data.data
 }
 
-const sendMessage = async (message) => {
-    const res = await apiInstance.post("/messages", message)
+const sendItem = async (item) => {
+    const res = await apiInstance.post("/items", item)
     return res
 }
 
@@ -54,10 +55,10 @@ const reportMesage = async (id) => {
 
 
 export const api ={
-    getMessages,
+    getItem,
     registerUser,
     loginUser,
-    sendMessage,
+    sendItem,
     deleteMessage,
     likeMessage,
     reportMesage

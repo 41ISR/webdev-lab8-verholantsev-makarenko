@@ -2,11 +2,11 @@ import { create } from "zustand";
 import { api } from "../api/api";
 
 export const useItemStore = create((set) => ({
-    item: [],
+    items: [],
     getItem: async () => {
         try {
             const res = await api.getItem()
-            set({item: res})
+            set({items: res})
         } catch (error) {
             console.error(error)
         }

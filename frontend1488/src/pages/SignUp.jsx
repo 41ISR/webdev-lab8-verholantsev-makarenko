@@ -16,7 +16,7 @@ const SignUp = () =>{
         e.preventDefault()
         setError("")
 
-        if (e.target.password.value !== e.target.password2.value){
+        if (e.target.password.value !== e.target.confirmPassword.value){
             setError("Пароли не совпадают")
             return
         }
@@ -47,7 +47,7 @@ const SignUp = () =>{
             Такое имя пользователя уже занято
         </div>
 
-        <form id="register-form">
+        <form onSubmit={handleSubmit} id="register-form">
             <div className="form-group">
                 <label className="form-label">Имя пользователя</label>
                 <Input 
@@ -55,9 +55,9 @@ const SignUp = () =>{
                     className="form-input" 
                     name="username"
                     placeholder="Введите имя пользователя"
-                    minlength="3"
+                    minLength="3"
                     required
-                    autocomplete="username"
+                    autoComplete="username"
                 />
                 <div className="form-hint">Минимум 3 символа</div>
                 <div className="form-error">Имя пользователя должно быть не менее 3 символов</div>
@@ -70,7 +70,7 @@ const SignUp = () =>{
                     className="form-input" 
                     name="email"
                     placeholder="example@email.com"
-                    autocomplete="email"
+                    autoComplete="email"
                 />
                 <div className="form-error">Введите корректный email</div>
             </div>
@@ -82,9 +82,9 @@ const SignUp = () =>{
                     className="form-input" 
                     name="password"
                     placeholder="Введите пароль"
-                    minlength="6"
+                    minLength="6"
                     required
-                    autocomplete="new-password"
+                    autoComplete="new-password"
                 />
                 <div className="password-strength">
                     <div className="password-strength-bar" id="password-strength-bar"></div>
@@ -101,7 +101,7 @@ const SignUp = () =>{
                     name="confirmPassword"
                     placeholder="Повторите пароль"
                     required
-                    autocomplete="new-password"
+                    autoComplete="new-password"
                 />
                 <div className="form-error">Пароли не совпадают</div>
             </div>

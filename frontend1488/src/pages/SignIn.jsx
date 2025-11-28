@@ -4,6 +4,7 @@ import Button from "../components/Button"
 import Input from "../components/Input"
 import { Link, useNavigate } from "react-router-dom"
 import { useUserStore } from "../store/useUserStore"
+import { api } from "../api/api"
 
 
 const SignIn = () =>{
@@ -21,7 +22,7 @@ const SignIn = () =>{
             password: e.target.password.value
         }
         try {
-            const data = await ap.loginUser(user)
+            const data = await api.loginUser(user)
             setSession(data.data)
             navigate("/")
         } catch (error) {
@@ -41,16 +42,16 @@ const SignIn = () =>{
             Неверное имя пользователя или пароль
         </div>
 
-        <form id="login-form">
+        <form onSubmit={handleSubmit} id="login-form">
             <div className="form-group">
-                <label class="form-label">Имя пользователя</label>
+                <label className="form-label">Имя пользователя</label>
                 <Input 
                     type="text" 
-                    class="form-input" 
+                    className="form-input" 
                     name="username"
                     placeholder="Введите имя пользователя"
                     required
-                    autocomplete="username"
+                    autoComplete="username"
                 />
                 <div className="form-error">Введите имя пользователя</div>
             </div>
@@ -59,16 +60,16 @@ const SignIn = () =>{
                 <label className="form-label">Пароль</label>
                 <Input 
                     type="password" 
-                    class="form-input" 
+                    className="form-input" 
                     name="password"
                     placeholder="Введите пароль"
                     required
-                    autocomplete="current-password"
+                    autoComplete="current-password"
                 />
                 <div className="form-error">Введите пароль</div>
             </div>
 
-            <Button type="submit" class="btn-submit">Войти</Button>
+            <Button type="submit" className="btn-submit">Войти</Button>
         </form>
 
         <div className="auth-divider">или</div>
