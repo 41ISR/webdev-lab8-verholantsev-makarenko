@@ -11,7 +11,11 @@ const DB_FILE = path.join(__dirname, 'database.json')
 const JWT_SECRET = 'your-secret-key-change-this-in-production'
 const SALT_ROUNDS = 10
 
-app.use(cors())
+
+app.use(
+    cors()
+);
+// app.options('*', cors())
 app.use(express.json())
 
 async function initDatabase() {
@@ -332,8 +336,8 @@ app.post('/api/items/:id/bids', authenticateToken, async (req, res) => {
         // Check if bid is higher than current highest bid
         const currentHighestBid = item.highestBid || item.price
         if (amount <= currentHighestBid) {
-            return res.status(400).json({ 
-                error: `Bid must be higher than current highest bid (${currentHighestBid})` 
+            return res.status(400).json({
+                error: `Bid must be higher than current highest bid (${currentHighestBid})`
             })
         }
 
@@ -347,7 +351,7 @@ app.post('/api/items/:id/bids', authenticateToken, async (req, res) => {
         }
 
         db.bids.push(newBid)
-        
+
         // Update item with new highest bid
         item.highestBid = parseFloat(amount)
         item.bidCount = db.bids.filter(bid => bid.itemId === itemId).length
@@ -424,8 +428,8 @@ app.get('/api/stats', async (req, res) => {
             totalBids: db.bids.length,
             activeItems: db.items.filter(item => item.status === 'active').length,
             totalValue: db.items.reduce((sum, item) => sum + (item.highestBid || item.price), 0),
-            averageItemPrice: db.items.length > 0 
-                ? db.items.reduce((sum, item) => sum + item.price, 0) / db.items.length 
+            averageItemPrice: db.items.length > 0
+                ? db.items.reduce((sum, item) => sum + item.price, 0) / db.items.length
                 : 0
         }
 

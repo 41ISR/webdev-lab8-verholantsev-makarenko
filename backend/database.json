@@ -1,5 +1,58 @@
 {
-  "items": [],
+  "items": [
+    {
+      "id": 1764309086153,
+      "title": "test",
+      "description": "test",
+      "price": 4001,
+      "imageUrl": null,
+      "userId": 1764307167223,
+      "username": "marmelad1",
+      "status": "active",
+      "highestBid": null,
+      "bidCount": 0,
+      "createdAt": "2025-11-28T05:51:26.153Z"
+    },
+    {
+      "id": 1764309147876,
+      "title": "test",
+      "description": "test",
+      "price": 4001,
+      "imageUrl": null,
+      "userId": 1764307167223,
+      "username": "marmelad1",
+      "status": "active",
+      "highestBid": null,
+      "bidCount": 0,
+      "createdAt": "2025-11-28T05:52:27.876Z"
+    },
+    {
+      "id": 1764309183746,
+      "title": "test",
+      "description": "test",
+      "price": 4001,
+      "imageUrl": null,
+      "userId": 1764307167223,
+      "username": "marmelad1",
+      "status": "active",
+      "highestBid": null,
+      "bidCount": 0,
+      "createdAt": "2025-11-28T05:53:03.746Z"
+    },
+    {
+      "id": 1764314759847,
+      "title": "asd",
+      "description": "asd",
+      "price": 5000,
+      "imageUrl": null,
+      "userId": 1764307167223,
+      "username": "marmelad1",
+      "status": "active",
+      "highestBid": null,
+      "bidCount": 0,
+      "createdAt": "2025-11-28T07:25:59.847Z"
+    }
+  ],
   "bids": [],
   "users": [
     {
@@ -8,6 +61,13 @@
       "email": "test@example.com",
       "password": "$2b$10$EgVDQPfrj9sgt3bDDXjX9egBZ5bL0JS.c/Vmgas3mS1YoAi8V9K8.",
       "createdAt": "2025-10-20T06:53:56.986Z"
+    },
+    {
+      "id": 1764307167223,
+      "username": "marmelad1",
+      "email": "marmelad1@example.com",
+      "password": "$2b$10$OrrE6kRfJieoqFoVgUcaRucOBL2.tJvEDF1.sHkeq14gOTOa9oYja",
+      "createdAt": "2025-11-28T05:19:27.223Z"
     }
   ]
 }
