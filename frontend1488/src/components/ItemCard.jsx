@@ -5,7 +5,7 @@ const ItemCard = ({title, description, price, username, status, imageUrl, highes
          <>
         <div className="items-grid">
             <div className="item-card">
-                <img className="item-image">{imageUrl}</img>
+                <img className="item-image" src={imageUrl} />
                 <div className="item-content">
                     <span className="status-badge status-active">{status}</span>
                     <h3 className="item-title">{title}</h3>

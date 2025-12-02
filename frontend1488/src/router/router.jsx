@@ -5,6 +5,8 @@ import SignUp from "../pages/SignUp";
 import Logout from "../pages/Logout";
 import CreateItem from "../pages/CreateItem";
 import ItemsList from "../pages/ItemsList";
+import Bids from "../pages/Bids";
+import ItemDetail from "../pages/ItemDetail";
 
 
 export const router = createBrowserRouter(
@@ -21,6 +23,14 @@ export const router = createBrowserRouter(
                     path:"/createitem",
                     element: <CreateItem  />
                 },
+                {
+                    path:"/bids",
+                    element: <Bids  />
+                },
+                {
+                    path:"items/:id",
+                    element: <ItemDetail />
+                }
             ]
         },
         {
