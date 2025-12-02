@@ -1,10 +1,14 @@
+import { useNavigate } from "react-router-dom"
 
-const ItemCard = ({title, description, price, username, status, imageUrl, highestBid, bidCount}) => {
-
+const ItemCard = ({id, title, description, price, username, status, imageUrl, highestBid, bidCount}) => {
+    const navigate = useNavigate()
+    const handleClick = () => {
+        navigate(`/item/${id}`)
+    }
     return(
          <>
         <div className="items-grid">
-            <div className="item-card">
+            <div onClick={handleClick} className="item-card">
                 <img className="item-image" src={imageUrl} />
                 <div className="item-content">
                     <span className="status-badge status-active">{status}</span>

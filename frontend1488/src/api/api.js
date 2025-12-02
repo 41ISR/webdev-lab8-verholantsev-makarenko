@@ -38,23 +38,23 @@ const loginUser = async (user) =>{
     return res
 }
 
-const deleteMessage = async (id) =>{
-    const res = await apiInstance.delete(`/messages/${id}`)
-    return res
-}
-
-const likeMessage = async (id) =>{
-    const res = await apiInstance.post(`/messages/${id}/like`)
-    return res
-}
-
-const reportMesage = async (id) => {
-    const res = await apiInstance.post(`/messages/${id}/report`)
+const deleteItem = async (id) =>{
+    const res = await apiInstance.delete(`/item/${id}`)
     return res
 }
 
  const getStats = async () => {
     const res = await apiInstance.get("/stats")
+    return res
+ }
+
+  const getBids = async () => {
+    const res = await apiInstance.get("/bids/my")
+    return res
+ }
+
+ const getBidsDetails = async () => {
+    const res = await apiInstance.get("/api/items/:id/bids")    
     return res
  }
 
@@ -64,8 +64,8 @@ export const api ={
     registerUser,
     loginUser,
     sendItem,
-    deleteMessage,
-    likeMessage,
-    reportMesage,
-    getStats
+    getStats,
+    getBids,
+    getBidsDetails,
+    deleteItem
 }

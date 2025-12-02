@@ -3,7 +3,6 @@ import { api } from "../api/api";
 
 export const useItemStore = create((set) => ({
     items: [],
-    myBids: [],
     getItem: async () => {
         try {
             const res = await api.getItem()
@@ -12,10 +11,11 @@ export const useItemStore = create((set) => ({
             console.error(error)
         }
     },
+    myBids: [],
     fetchMyBids: async () => {
         try {
-        const myBids = await api.getMyBids()
-        set({ myBids })
+        const myBids = await api.getBids()
+        set({ myBids:myBids.data })
         } catch (error) {
         set({ error: error.message })
         }
