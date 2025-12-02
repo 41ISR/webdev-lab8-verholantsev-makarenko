@@ -3,6 +3,7 @@ import { useEffect } from "react"
 import { useItemStore } from "../store/useItemStore"
 import { useUserStore } from "../store/useUserStore"
 import ItemCard from "../components/ItemCard"
+import Stats from "../components/Stats"
 
 const ItemsList = () => {
     const { items, getItem } = useItemStore()
@@ -18,6 +19,7 @@ const ItemsList = () => {
             <div className="page-header">
                 <h1>Все товары</h1>
             </div>
+            <Stats/>
 
             {/* <div className="stats">
                 <div className="stat-item">

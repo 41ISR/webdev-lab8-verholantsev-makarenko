@@ -53,6 +53,11 @@ const reportMesage = async (id) => {
     return res
 }
 
+ const getStats = async () => {
+    const res = await apiInstance.get("/stats")
+    return res
+ }
+
 
 export const api ={
     getItem,
@@ -61,5 +66,6 @@ export const api ={
     sendItem,
     deleteMessage,
     likeMessage,
-    reportMesage
+    reportMesage,
+    getStats
 }
