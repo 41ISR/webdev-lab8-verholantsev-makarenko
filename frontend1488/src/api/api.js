@@ -39,7 +39,7 @@ const loginUser = async (user) =>{
 }
 
 const deleteItem = async (id) =>{
-    const res = await apiInstance.delete(`/item/${id}`)
+    const res = await apiInstance.delete(`/items/${id}`)
     return res
 }
 
@@ -53,8 +53,13 @@ const deleteItem = async (id) =>{
     return res
  }
 
- const getBidsDetails = async () => {
-    const res = await apiInstance.get("/api/items/:id/bids")    
+ const getBidsDetails = async (id) => {
+    const res = await apiInstance.get(`/items/${id}/bids`)    
+    return res
+ }
+
+ const createBid = async (id, amount) => {
+    const res = await apiInstance.post(`/items/${id}/bids`, { amount })
     return res
  }
 
@@ -67,5 +72,6 @@ export const api ={
     getStats,
     getBids,
     getBidsDetails,
+    createBid,
     deleteItem
 }

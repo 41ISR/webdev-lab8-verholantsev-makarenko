@@ -25,7 +25,7 @@ const Stats = () => {
                 <span className="stat-label">Активных</span>
             </div>
             <div className="stat-item">
-                <span className="stat-value">{stats.totalValue}</span>
+                <span className="stat-value">{stats.averageItemPrice}</span>
                 <span className="stat-label">Средняя цена</span>
             </div>
         </div>

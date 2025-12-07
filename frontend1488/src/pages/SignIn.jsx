@@ -75,7 +75,7 @@ const SignIn = () =>{
         <div className="auth-divider">или</div>
 
         <div className="auth-link">
-            Нет аккаунта? <Link to = "/SignUp">Зарегистрироваться</Link>
+            Нет аккаунта? <Link to="/signup">Зарегистрироваться</Link>
         </div>
     </div>
     )

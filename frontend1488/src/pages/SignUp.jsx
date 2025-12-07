@@ -112,7 +112,7 @@ const SignUp = () =>{
         <div className="auth-divider">или</div>
 
         <div className="auth-link">
-            Уже есть аккаунт? <Link to="/SignIn">Войти</Link>
+            Уже есть аккаунт? <Link to="/signin">Войти</Link>
         </div>
     </div>
     )
